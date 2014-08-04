@@ -21,6 +21,9 @@
 		9BFD7D73198FC9CA0062DE9D /* GNMImagesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFD7D72198FC9CA0062DE9D /* GNMImagesTests.m */; };
 		9BFD7D7D198FC9F90062DE9D /* RubyCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFD7D7C198FC9F90062DE9D /* RubyCocoa.framework */; };
 		9BFD7D7F198FCA1E0062DE9D /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFD7D7E198FCA1E0062DE9D /* AppleScriptObjC.framework */; };
+		9BFD7D82198FFF130062DE9D /* VidispineBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFD7D81198FFF130062DE9D /* VidispineBase.m */; };
+		9BFD7D85198FFF2B0062DE9D /* VidispineCommissionGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFD7D84198FFF2B0062DE9D /* VidispineCommissionGrabber.m */; };
+		9BFD7D8719900A600062DE9D /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFD7D8619900A600062DE9D /* libcurl.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,11 @@
 		9BFD7D72198FC9CA0062DE9D /* GNMImagesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GNMImagesTests.m; sourceTree = "<group>"; };
 		9BFD7D7C198FC9F90062DE9D /* RubyCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RubyCocoa.framework; path = ../../../../../Library/Frameworks/RubyCocoa.framework; sourceTree = "<group>"; };
 		9BFD7D7E198FCA1E0062DE9D /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = ../../../../../System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = "<group>"; };
+		9BFD7D80198FFF130062DE9D /* VidispineBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VidispineBase.h; sourceTree = "<group>"; };
+		9BFD7D81198FFF130062DE9D /* VidispineBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VidispineBase.m; sourceTree = "<group>"; };
+		9BFD7D83198FFF2B0062DE9D /* VidispineCommissionGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VidispineCommissionGrabber.h; sourceTree = "<group>"; };
+		9BFD7D84198FFF2B0062DE9D /* VidispineCommissionGrabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VidispineCommissionGrabber.m; sourceTree = "<group>"; };
+		9BFD7D8619900A600062DE9D /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BFD7D8719900A600062DE9D /* libcurl.dylib in Frameworks */,
 				9BFD7D7D198FC9F90062DE9D /* RubyCocoa.framework in Frameworks */,
 				9BFD7D7F198FCA1E0062DE9D /* AppleScriptObjC.framework in Frameworks */,
 				9BFD7D46198FC9CA0062DE9D /* Cocoa.framework in Frameworks */,
@@ -105,6 +114,7 @@
 		9BFD7D44198FC9CA0062DE9D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9BFD7D8619900A600062DE9D /* libcurl.dylib */,
 				9BFD7D45198FC9CA0062DE9D /* Cocoa.framework */,
 				9BFD7D67198FC9CA0062DE9D /* XCTest.framework */,
 				9BFD7D47198FC9CA0062DE9D /* Other Frameworks */,
@@ -127,6 +137,10 @@
 			children = (
 				9BFD7D57198FC9CA0062DE9D /* AppDelegate.h */,
 				9BFD7D58198FC9CA0062DE9D /* AppDelegate.m */,
+				9BFD7D80198FFF130062DE9D /* VidispineBase.h */,
+				9BFD7D81198FFF130062DE9D /* VidispineBase.m */,
+				9BFD7D83198FFF2B0062DE9D /* VidispineCommissionGrabber.h */,
+				9BFD7D84198FFF2B0062DE9D /* VidispineCommissionGrabber.m */,
 				9BFD7D5A198FC9CA0062DE9D /* MainMenu.xib */,
 				9BFD7D60198FC9CA0062DE9D /* Images.xcassets */,
 				9BFD7D5D198FC9CA0062DE9D /* GNMImages.xcdatamodeld */,
@@ -263,8 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BFD7D82198FFF130062DE9D /* VidispineBase.m in Sources */,
 				9BFD7D59198FC9CA0062DE9D /* AppDelegate.m in Sources */,
 				9BFD7D5F198FC9CA0062DE9D /* GNMImages.xcdatamodeld in Sources */,
+				9BFD7D85198FFF2B0062DE9D /* VidispineCommissionGrabber.m in Sources */,
 				9BFD7D52198FC9CA0062DE9D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
