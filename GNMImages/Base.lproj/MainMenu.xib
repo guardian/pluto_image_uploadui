@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5023"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -19,9 +19,9 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
-                <menuItem title="GNMImages" id="1Xt-HY-uBw">
+                <menuItem title="Multimedia Image Hander Test" id="1Xt-HY-uBw">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="GNMImages" systemMenu="apple" id="uQy-DD-JDr">
+                    <menu key="submenu" title="Multimedia Image Hander Test" systemMenu="apple" id="uQy-DD-JDr">
                         <items>
                             <menuItem title="About GNMImages" id="5kV-Vb-QxS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -666,15 +666,68 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="GNMImages" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="GNMImages" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g" userLabel="Window - mainwindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <browser verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" enabled="YES" hasHorizontalScroller="YES" allowsEmptySelection="YES" defaultColumnWidth="100" minColumnWidth="100" maxVisibleColumns="5" titled="YES" separatesColumns="YES" allowsTypeSelect="YES" columnResizingType="auto" translatesAutoresizingMaskIntoConstraints="NO" id="yVy-LW-TRa">
+                        <rect key="frame" x="24" y="20" width="436" height="321"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <connections>
+                            <binding destination="EZn-PF-jni" name="content" keyPath="arrangedObjects" id="vbB-zA-pLh"/>
+                            <binding destination="EZn-PF-jni" name="contentValues" keyPath="arrangedObjects.name" previousBinding="vbB-zA-pLh" id="uUV-sd-eXT"/>
+                            <binding destination="EZn-PF-jni" name="selectionIndexPaths" keyPath="selectionIndexPaths" previousBinding="uUV-sd-eXT" id="Dqh-0P-YpR"/>
+                        </connections>
+                    </browser>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qiN-ax-ga3">
+                        <rect key="frame" x="24" y="321" width="21" height="19"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="square" title="+" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7P8-QP-WIJ">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="add:" target="EZn-PF-jni" id="mMP-3r-nvg"/>
+                            <binding destination="EZn-PF-jni" name="enabled" keyPath="canAdd" id="k9e-SA-TXn"/>
+                        </connections>
+                    </button>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uqe-UL-ejy">
+                        <rect key="frame" x="105" y="321" width="69" height="19"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="square" title="add child" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="t8R-rX-nnD">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="addChild:" target="EZn-PF-jni" id="h6b-Lg-2Fe"/>
+                            <binding destination="EZn-PF-jni" name="enabled" keyPath="canAddChild" id="19r-LW-kvd"/>
+                        </connections>
+                    </button>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kF7-as-tFa">
+                        <rect key="frame" x="264" y="321" width="18" height="19"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="square" title="-" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JH8-1F-Bf1">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="remove:" target="EZn-PF-jni" id="fBE-jI-L7R"/>
+                            <binding destination="EZn-PF-jni" name="enabled" keyPath="canRemove" id="OHO-RI-OAt"/>
+                        </connections>
+                    </button>
+                </subviews>
             </view>
         </window>
+        <userDefaultsController representsSharedInstance="YES" id="LZd-Hw-qeb"/>
+        <treeController mode="entity" entityName="PLUTOCommission" automaticallyPreparesContent="YES" childrenKeyPath="children" id="EZn-PF-jni">
+            <connections>
+                <binding destination="Voe-Tx-rLC" name="managedObjectContext" keyPath="managedObjectContext" id="Scg-eq-xbW"/>
+            </connections>
+        </treeController>
     </objects>
 </document>

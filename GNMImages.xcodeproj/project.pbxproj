@@ -19,6 +19,8 @@
 		9BFD7D69198FC9CA0062DE9D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFD7D45198FC9CA0062DE9D /* Cocoa.framework */; };
 		9BFD7D71198FC9CA0062DE9D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BFD7D6F198FC9CA0062DE9D /* InfoPlist.strings */; };
 		9BFD7D73198FC9CA0062DE9D /* GNMImagesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFD7D72198FC9CA0062DE9D /* GNMImagesTests.m */; };
+		9BFD7D7D198FC9F90062DE9D /* RubyCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFD7D7C198FC9F90062DE9D /* RubyCocoa.framework */; };
+		9BFD7D7F198FCA1E0062DE9D /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFD7D7E198FCA1E0062DE9D /* AppleScriptObjC.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		9BFD7D6E198FC9CA0062DE9D /* GNMImagesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GNMImagesTests-Info.plist"; sourceTree = "<group>"; };
 		9BFD7D70198FC9CA0062DE9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9BFD7D72198FC9CA0062DE9D /* GNMImagesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GNMImagesTests.m; sourceTree = "<group>"; };
+		9BFD7D7C198FC9F90062DE9D /* RubyCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RubyCocoa.framework; path = ../../../../../Library/Frameworks/RubyCocoa.framework; sourceTree = "<group>"; };
+		9BFD7D7E198FCA1E0062DE9D /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = ../../../../../System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BFD7D7D198FC9F90062DE9D /* RubyCocoa.framework in Frameworks */,
+				9BFD7D7F198FCA1E0062DE9D /* AppleScriptObjC.framework in Frameworks */,
 				9BFD7D46198FC9CA0062DE9D /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,6 +84,8 @@
 		9BFD7D39198FC9CA0062DE9D = {
 			isa = PBXGroup;
 			children = (
+				9BFD7D7E198FCA1E0062DE9D /* AppleScriptObjC.framework */,
+				9BFD7D7C198FC9F90062DE9D /* RubyCocoa.framework */,
 				9BFD7D4B198FC9CA0062DE9D /* GNMImages */,
 				9BFD7D6C198FC9CA0062DE9D /* GNMImagesTests */,
 				9BFD7D44198FC9CA0062DE9D /* Frameworks */,
@@ -390,6 +398,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GNMImages/GNMImages-Prefix.pch";
 				INFOPLIST_FILE = "GNMImages/GNMImages-Info.plist";
@@ -403,6 +415,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GNMImages/GNMImages-Prefix.pch";
 				INFOPLIST_FILE = "GNMImages/GNMImages-Info.plist";

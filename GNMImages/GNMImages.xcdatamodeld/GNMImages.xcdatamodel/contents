@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="untitled.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="PLUTOCommission" syncable="YES">
+        <attribute name="commissioner" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" defaultValueString="new commission" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vsid" optional="YES" attributeType="String" regularExpressionString="^\w{2}-\d+$" syncable="YES"/>
+        <relationship name="children" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PLUTOProject" inverseName="parent" inverseEntity="PLUTOProject" syncable="YES"/>
+    </entity>
+    <entity name="PLUTOMaster" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" defaultValueString="new master" syncable="YES"/>
+        <attribute name="vsid" optional="YES" attributeType="String" regularExpressionString="^\w{2}-\d+$" syncable="YES"/>
+        <relationship name="children" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PLUTOMaster" syncable="YES"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PLUTOProject" inverseName="children" inverseEntity="PLUTOProject" syncable="YES"/>
+    </entity>
+    <entity name="PLUTOProject" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" defaultValueString="new project" syncable="YES"/>
+        <attribute name="project_type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vsid" optional="YES" attributeType="String" regularExpressionString="^\w{2}-\d+$" syncable="YES"/>
+        <relationship name="children" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PLUTOMaster" inverseName="parent" inverseEntity="PLUTOMaster" syncable="YES"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PLUTOCommission" inverseName="children" inverseEntity="PLUTOCommission" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="PLUTOCommission" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="PLUTOProject" positionX="-54" positionY="0" width="128" height="118"/>
+        <element name="PLUTOMaster" positionX="-36" positionY="9" width="128" height="118"/>
+    </elements>
 </model>

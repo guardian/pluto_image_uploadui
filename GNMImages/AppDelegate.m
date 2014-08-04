@@ -17,7 +17,18 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    NSManagedObjectContext *ctx=[self managedObjectContext];
+    NSManagedObject *testCommissionOne = [NSEntityDescription insertNewObjectForEntityForName:@"PLUTOCommission"inManagedObjectContext:ctx];
+    
+    [testCommissionOne setValue:@"commission one" forKey:@"name"];
+    
+     NSManagedObject *testProjectOne = [NSEntityDescription insertNewObjectForEntityForName:@"PLUTOProject"inManagedObjectContext:ctx];
+    [testProjectOne setValue:@"project one" forKey:@"name"];
+    [testCommissionOne setValue:[NSSet setWithObject:testProjectOne] forKey:@"children"];
+    
+    
 }
+
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "theguardian.com.GNMImages" in the user's Application Support directory.
 - (NSURL *)applicationFilesDirectory
