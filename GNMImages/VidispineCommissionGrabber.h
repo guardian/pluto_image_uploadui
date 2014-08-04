@@ -10,4 +10,6 @@
 
 @interface VidispineCommissionGrabber : VidispineBase
 
+- (int)getCommissions:managedObjectContext;
+
 @end

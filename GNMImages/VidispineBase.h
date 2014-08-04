@@ -13,6 +13,8 @@
 @property NSString *path;
 @property NSMutableArray *queryPart;
 @property NSMutableArray *matrixPart;
+@property NSString *method;
+@property NSString *body;
 
 - (id)init:path queryPart:(NSArray *)q matrixPart:(NSArray *)m;
 - (NSString *)finalURLFragment;
@@ -20,13 +22,14 @@
 @end
 
 @interface VidispineBase : NSObject
-
+@property bool debug;
 @property NSString *hostname;
 @property NSString *port;
 @property NSString *username;
 @property NSString *passwd;
 @property NSError *lastError;
 
+- (id)init:(NSString *)hostname port:(NSString *)port username:(NSString *)username password:(NSString *)passwd;
 - (NSXMLDocument *)makeRequest:(VSRequest *)req;
 - (NSError *)lastError;
 

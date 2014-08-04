@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+//#import "VidispineBase.h"
+#import "VidispineCommissionGrabber.h"
 
 @implementation AppDelegate
 
@@ -18,15 +20,19 @@
 {
     // Insert code here to initialize your application
     NSManagedObjectContext *ctx=[self managedObjectContext];
-    NSManagedObject *testCommissionOne = [NSEntityDescription insertNewObjectForEntityForName:@"PLUTOCommission"inManagedObjectContext:ctx];
+/*
+ NSManagedObject *testCommissionOne = [NSEntityDescription insertNewObjectForEntityForName:@"PLUTOCommission"inManagedObjectContext:ctx];
     
     [testCommissionOne setValue:@"commission one" forKey:@"name"];
     
      NSManagedObject *testProjectOne = [NSEntityDescription insertNewObjectForEntityForName:@"PLUTOProject"inManagedObjectContext:ctx];
     [testProjectOne setValue:@"project one" forKey:@"name"];
     [testCommissionOne setValue:[NSSet setWithObject:testProjectOne] forKey:@"children"];
+ */
+
+    VidispineCommissionGrabber *grabber=[[VidispineCommissionGrabber alloc] init:@"dc1-mmlb-02.dc1.gnm.int" port:@"8080" username:@"admin" password:@"admin"];
     
-    
+    [grabber getCommissions:ctx];
 }
 
 

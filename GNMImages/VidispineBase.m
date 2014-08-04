@@ -67,6 +67,17 @@ NSMutableData *buf=(__bridge NSMutableData *)userdata;
 @synthesize port;
 @synthesize username;
 @synthesize passwd;
+@synthesize debug;
+
+- (id)init:(NSString *)hst port:(NSString *)pt username:(NSString *)usr password:(NSString *)pwd
+{
+    hostname=hst;
+    port=pt;
+    username=usr;
+    passwd=pwd;
+    
+    return self;
+}
 
 /*make a request and return parsed XML data from it, or NULL*/
 - (NSXMLDocument *)makeRequest:(VSRequest *)req
@@ -77,6 +88,9 @@ NSMutableData *buf=(__bridge NSMutableData *)userdata;
 
     NSString *finalURL=[NSString stringWithFormat:@"http://%@:%@/%@",hostname,port,[req finalURLFragment]];
     
+    if(debug){
+        NSLog(@"connecting to %@",finalURL);
+    }
     CURL *curl = curl_easy_init();
 
     NSMutableData *dataBuffer = [[NSMutableData alloc] init];
@@ -85,11 +99,16 @@ NSMutableData *buf=(__bridge NSMutableData *)userdata;
     if(username)
         curl_easy_setopt(curl,CURLOPT_USERNAME,[username cStringUsingEncoding:NSUTF8StringEncoding]);
     if(passwd)
-        curl_easy_setopt(curl,CURLOPT_USERNAME,[passwd cStringUsingEncoding:NSUTF8StringEncoding]);
+        curl_easy_setopt(curl,CURLOPT_PASSWORD,[passwd cStringUsingEncoding:NSUTF8StringEncoding]);
 
     curl_easy_setopt(curl,CURLOPT_WRITEFUNCTION,&download_write_callback);
     curl_easy_setopt(curl,CURLOPT_WRITEDATA,(__bridge void *)dataBuffer);
     
+    curl_easy_perform(curl);
+    
+    if(debug){
+        NSLog(@"data returned from server:\n%@",[[NSString alloc] initWithData:dataBuffer encoding:NSUTF8StringEncoding]);
+    }
     NSError *parseError=nil;
     NSXMLDocument *doc = [[NSXMLDocument alloc] initWithData:dataBuffer options:NSXMLDocumentTidyXML error:&parseError];
     
