@@ -1,0 +1,498 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9BFD7D46198FC9CA0062DE9D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFD7D45198FC9CA0062DE9D /* Cocoa.framework */; };
+		9BFD7D50198FC9CA0062DE9D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BFD7D4E198FC9CA0062DE9D /* InfoPlist.strings */; };
+		9BFD7D52198FC9CA0062DE9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFD7D51198FC9CA0062DE9D /* main.m */; };
+		9BFD7D56198FC9CA0062DE9D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9BFD7D54198FC9CA0062DE9D /* Credits.rtf */; };
+		9BFD7D59198FC9CA0062DE9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFD7D58198FC9CA0062DE9D /* AppDelegate.m */; };
+		9BFD7D5C198FC9CA0062DE9D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BFD7D5A198FC9CA0062DE9D /* MainMenu.xib */; };
+		9BFD7D5F198FC9CA0062DE9D /* GNMImages.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BFD7D5D198FC9CA0062DE9D /* GNMImages.xcdatamodeld */; };
+		9BFD7D61198FC9CA0062DE9D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BFD7D60198FC9CA0062DE9D /* Images.xcassets */; };
+		9BFD7D68198FC9CA0062DE9D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFD7D67198FC9CA0062DE9D /* XCTest.framework */; };
+		9BFD7D69198FC9CA0062DE9D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFD7D45198FC9CA0062DE9D /* Cocoa.framework */; };
+		9BFD7D71198FC9CA0062DE9D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BFD7D6F198FC9CA0062DE9D /* InfoPlist.strings */; };
+		9BFD7D73198FC9CA0062DE9D /* GNMImagesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFD7D72198FC9CA0062DE9D /* GNMImagesTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9BFD7D6A198FC9CA0062DE9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9BFD7D3A198FC9CA0062DE9D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9BFD7D41198FC9CA0062DE9D;
+			remoteInfo = GNMImages;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9BFD7D42198FC9CA0062DE9D /* GNMImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GNMImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BFD7D45198FC9CA0062DE9D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		9BFD7D48198FC9CA0062DE9D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		9BFD7D49198FC9CA0062DE9D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9BFD7D4A198FC9CA0062DE9D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9BFD7D4D198FC9CA0062DE9D /* GNMImages-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GNMImages-Info.plist"; sourceTree = "<group>"; };
+		9BFD7D4F198FC9CA0062DE9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9BFD7D51198FC9CA0062DE9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9BFD7D53198FC9CA0062DE9D /* GNMImages-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GNMImages-Prefix.pch"; sourceTree = "<group>"; };
+		9BFD7D55198FC9CA0062DE9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		9BFD7D57198FC9CA0062DE9D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9BFD7D58198FC9CA0062DE9D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9BFD7D5B198FC9CA0062DE9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		9BFD7D5E198FC9CA0062DE9D /* GNMImages.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GNMImages.xcdatamodel; sourceTree = "<group>"; };
+		9BFD7D60198FC9CA0062DE9D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9BFD7D66198FC9CA0062DE9D /* GNMImagesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GNMImagesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BFD7D67198FC9CA0062DE9D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		9BFD7D6E198FC9CA0062DE9D /* GNMImagesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GNMImagesTests-Info.plist"; sourceTree = "<group>"; };
+		9BFD7D70198FC9CA0062DE9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9BFD7D72198FC9CA0062DE9D /* GNMImagesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GNMImagesTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9BFD7D3F198FC9CA0062DE9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BFD7D46198FC9CA0062DE9D /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BFD7D63198FC9CA0062DE9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BFD7D69198FC9CA0062DE9D /* Cocoa.framework in Frameworks */,
+				9BFD7D68198FC9CA0062DE9D /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9BFD7D39198FC9CA0062DE9D = {
+			isa = PBXGroup;
+			children = (
+				9BFD7D4B198FC9CA0062DE9D /* GNMImages */,
+				9BFD7D6C198FC9CA0062DE9D /* GNMImagesTests */,
+				9BFD7D44198FC9CA0062DE9D /* Frameworks */,
+				9BFD7D43198FC9CA0062DE9D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9BFD7D43198FC9CA0062DE9D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9BFD7D42198FC9CA0062DE9D /* GNMImages.app */,
+				9BFD7D66198FC9CA0062DE9D /* GNMImagesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9BFD7D44198FC9CA0062DE9D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9BFD7D45198FC9CA0062DE9D /* Cocoa.framework */,
+				9BFD7D67198FC9CA0062DE9D /* XCTest.framework */,
+				9BFD7D47198FC9CA0062DE9D /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9BFD7D47198FC9CA0062DE9D /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9BFD7D48198FC9CA0062DE9D /* AppKit.framework */,
+				9BFD7D49198FC9CA0062DE9D /* CoreData.framework */,
+				9BFD7D4A198FC9CA0062DE9D /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		9BFD7D4B198FC9CA0062DE9D /* GNMImages */ = {
+			isa = PBXGroup;
+			children = (
+				9BFD7D57198FC9CA0062DE9D /* AppDelegate.h */,
+				9BFD7D58198FC9CA0062DE9D /* AppDelegate.m */,
+				9BFD7D5A198FC9CA0062DE9D /* MainMenu.xib */,
+				9BFD7D60198FC9CA0062DE9D /* Images.xcassets */,
+				9BFD7D5D198FC9CA0062DE9D /* GNMImages.xcdatamodeld */,
+				9BFD7D4C198FC9CA0062DE9D /* Supporting Files */,
+			);
+			path = GNMImages;
+			sourceTree = "<group>";
+		};
+		9BFD7D4C198FC9CA0062DE9D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9BFD7D4D198FC9CA0062DE9D /* GNMImages-Info.plist */,
+				9BFD7D4E198FC9CA0062DE9D /* InfoPlist.strings */,
+				9BFD7D51198FC9CA0062DE9D /* main.m */,
+				9BFD7D53198FC9CA0062DE9D /* GNMImages-Prefix.pch */,
+				9BFD7D54198FC9CA0062DE9D /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9BFD7D6C198FC9CA0062DE9D /* GNMImagesTests */ = {
+			isa = PBXGroup;
+			children = (
+				9BFD7D72198FC9CA0062DE9D /* GNMImagesTests.m */,
+				9BFD7D6D198FC9CA0062DE9D /* Supporting Files */,
+			);
+			path = GNMImagesTests;
+			sourceTree = "<group>";
+		};
+		9BFD7D6D198FC9CA0062DE9D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9BFD7D6E198FC9CA0062DE9D /* GNMImagesTests-Info.plist */,
+				9BFD7D6F198FC9CA0062DE9D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9BFD7D41198FC9CA0062DE9D /* GNMImages */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BFD7D76198FC9CA0062DE9D /* Build configuration list for PBXNativeTarget "GNMImages" */;
+			buildPhases = (
+				9BFD7D3E198FC9CA0062DE9D /* Sources */,
+				9BFD7D3F198FC9CA0062DE9D /* Frameworks */,
+				9BFD7D40198FC9CA0062DE9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GNMImages;
+			productName = GNMImages;
+			productReference = 9BFD7D42198FC9CA0062DE9D /* GNMImages.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9BFD7D65198FC9CA0062DE9D /* GNMImagesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BFD7D79198FC9CA0062DE9D /* Build configuration list for PBXNativeTarget "GNMImagesTests" */;
+			buildPhases = (
+				9BFD7D62198FC9CA0062DE9D /* Sources */,
+				9BFD7D63198FC9CA0062DE9D /* Frameworks */,
+				9BFD7D64198FC9CA0062DE9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9BFD7D6B198FC9CA0062DE9D /* PBXTargetDependency */,
+			);
+			name = GNMImagesTests;
+			productName = GNMImagesTests;
+			productReference = 9BFD7D66198FC9CA0062DE9D /* GNMImagesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9BFD7D3A198FC9CA0062DE9D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Guardian News & Media";
+				TargetAttributes = {
+					9BFD7D65198FC9CA0062DE9D = {
+						TestTargetID = 9BFD7D41198FC9CA0062DE9D;
+					};
+				};
+			};
+			buildConfigurationList = 9BFD7D3D198FC9CA0062DE9D /* Build configuration list for PBXProject "GNMImages" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9BFD7D39198FC9CA0062DE9D;
+			productRefGroup = 9BFD7D43198FC9CA0062DE9D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9BFD7D41198FC9CA0062DE9D /* GNMImages */,
+				9BFD7D65198FC9CA0062DE9D /* GNMImagesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9BFD7D40198FC9CA0062DE9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BFD7D50198FC9CA0062DE9D /* InfoPlist.strings in Resources */,
+				9BFD7D61198FC9CA0062DE9D /* Images.xcassets in Resources */,
+				9BFD7D56198FC9CA0062DE9D /* Credits.rtf in Resources */,
+				9BFD7D5C198FC9CA0062DE9D /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BFD7D64198FC9CA0062DE9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BFD7D71198FC9CA0062DE9D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9BFD7D3E198FC9CA0062DE9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BFD7D59198FC9CA0062DE9D /* AppDelegate.m in Sources */,
+				9BFD7D5F198FC9CA0062DE9D /* GNMImages.xcdatamodeld in Sources */,
+				9BFD7D52198FC9CA0062DE9D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BFD7D62198FC9CA0062DE9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BFD7D73198FC9CA0062DE9D /* GNMImagesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9BFD7D6B198FC9CA0062DE9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9BFD7D41198FC9CA0062DE9D /* GNMImages */;
+			targetProxy = 9BFD7D6A198FC9CA0062DE9D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9BFD7D4E198FC9CA0062DE9D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BFD7D4F198FC9CA0062DE9D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9BFD7D54198FC9CA0062DE9D /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BFD7D55198FC9CA0062DE9D /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		9BFD7D5A198FC9CA0062DE9D /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BFD7D5B198FC9CA0062DE9D /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		9BFD7D6F198FC9CA0062DE9D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BFD7D70198FC9CA0062DE9D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9BFD7D74198FC9CA0062DE9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9BFD7D75198FC9CA0062DE9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9BFD7D77198FC9CA0062DE9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GNMImages/GNMImages-Prefix.pch";
+				INFOPLIST_FILE = "GNMImages/GNMImages-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9BFD7D78198FC9CA0062DE9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GNMImages/GNMImages-Prefix.pch";
+				INFOPLIST_FILE = "GNMImages/GNMImages-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		9BFD7D7A198FC9CA0062DE9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GNMImages.app/Contents/MacOS/GNMImages";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GNMImages/GNMImages-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "GNMImagesTests/GNMImagesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		9BFD7D7B198FC9CA0062DE9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GNMImages.app/Contents/MacOS/GNMImages";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GNMImages/GNMImages-Prefix.pch";
+				INFOPLIST_FILE = "GNMImagesTests/GNMImagesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9BFD7D3D198FC9CA0062DE9D /* Build configuration list for PBXProject "GNMImages" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BFD7D74198FC9CA0062DE9D /* Debug */,
+				9BFD7D75198FC9CA0062DE9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BFD7D76198FC9CA0062DE9D /* Build configuration list for PBXNativeTarget "GNMImages" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BFD7D77198FC9CA0062DE9D /* Debug */,
+				9BFD7D78198FC9CA0062DE9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9BFD7D79198FC9CA0062DE9D /* Build configuration list for PBXNativeTarget "GNMImagesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BFD7D7A198FC9CA0062DE9D /* Debug */,
+				9BFD7D7B198FC9CA0062DE9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9BFD7D5D198FC9CA0062DE9D /* GNMImages.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9BFD7D5E198FC9CA0062DE9D /* GNMImages.xcdatamodel */,
+			);
+			currentVersion = 9BFD7D5E198FC9CA0062DE9D /* GNMImages.xcdatamodel */;
+			path = GNMImages.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9BFD7D3A198FC9CA0062DE9D /* Project object */;
+}
