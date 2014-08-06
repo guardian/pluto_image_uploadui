@@ -14,10 +14,7 @@
 #import "VidispineItemGrabber.h"
 #import <AppleScriptObjC/AppleScriptObjC.h>
 
-@interface AcornUtil : NSObject
-- (void) test:(id)sender;
-
-@end
+#import "AcornUtil.h"
 
 @implementation AppDelegate
 
@@ -33,41 +30,42 @@
     [[NSFileManager defaultManager] removeItemAtPath:storeURL.path error:&error];
         
     // Insert code here to initialize your application
-    NSManagedObjectContext *ctx=[self managedObjectContext];
-    
-    /*Class AcornUtilClass = [[NSBundle mainBundle] classNamed:@"AcornUtil"];
-    id AcornUtil = class_createInstance(AcornUtilClass,0);*/
+
     Class AcornUtilClass = NSClassFromString(@"AcornUtil");
     
     AcornUtil *au = [[AcornUtilClass alloc] init];
     
-    //id AcornUtil = [[NSClassFromString(@"AcornUtil") alloc] init];
-    
-    //id acorn = [[AcornUtil alloc] init];
- 
-    
-/*    int i=0;
-    unsigned int mc = 0;
-    Method * mlist = class_copyMethodList(AcornUtil, &mc);
-    NSLog(@"%d methods", mc);
-    for(i=0;i<mc;i++)
-        NSLog(@"Method no #%d: %s", i, sel_getName(method_getName(mlist[i])));
- */
-    
     [au test:self];
  
-    
-/*
- NSManagedObject *testCommissionOne = [NSEntityDescription insertNewObjectForEntityForName:@"PLUTOCommission"inManagedObjectContext:ctx];
-    
-    [testCommissionOne setValue:@"commission one" forKey:@"name"];
-    
-     NSManagedObject *testProjectOne = [NSEntityDescription insertNewObjectForEntityForName:@"PLUTOProject"inManagedObjectContext:ctx];
-    [testProjectOne setValue:@"project one" forKey:@"name"];
-    [testCommissionOne setValue:[NSSet setWithObject:testProjectOne] forKey:@"children"];
- */
-
     return;
+}
+
+- (void)clearCachedObjects:(NSString *)entityDescription
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityDescription inManagedObjectContext:_managedObjectContext];
+    [fetchRequest setEntity:entity];
+
+    NSError *error;
+    NSArray *items = [_managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    //[fetchRequest release];
+
+    for (NSManagedObject *managedObject in items) {
+        [_managedObjectContext deleteObject:managedObject];
+        //NSLog(@"%@ object deleted",entityDescription);
+    }
+    if (![_managedObjectContext save:&error]) {
+        NSLog(@"Error deleting %@ - error:%@",entityDescription,error);
+    }
+}
+
+- (void)refresh:(id)sender
+{
+    NSManagedObjectContext *ctx=[self managedObjectContext];
+    
+    [self clearCachedObjects:@"PLUTOMaster"];
+    [self clearCachedObjects:@"PLUTOProject"];
+    [self clearCachedObjects:@"PLUTOCommission"];
     
     VidispineCommissionGrabber *grabber=[[VidispineCommissionGrabber alloc] init:@"dc1-mmlb-02.dc1.gnm.int" port:@"8080" username:@"admin" password:@"admin"];
     

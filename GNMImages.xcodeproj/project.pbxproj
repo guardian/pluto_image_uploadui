@@ -45,6 +45,7 @@
 		9BC30BAE1992340B002E1A1B /* VidispineItemGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VidispineItemGrabber.h; sourceTree = "<group>"; };
 		9BC30BAF1992340B002E1A1B /* VidispineItemGrabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VidispineItemGrabber.m; sourceTree = "<group>"; };
 		9BC30BB119924469002E1A1B /* AcornUtil.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = AcornUtil.applescript; sourceTree = "<group>"; };
+		9BC30BB31992502A002E1A1B /* AcornUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AcornUtil.h; sourceTree = "<group>"; };
 		9BFD7D42198FC9CA0062DE9D /* GNMImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GNMImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BFD7D45198FC9CA0062DE9D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9BFD7D48198FC9CA0062DE9D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -98,6 +99,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9BC30BB419925041002E1A1B /* Applescript Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				9BC30BB31992502A002E1A1B /* AcornUtil.h */,
+				9BC30BB119924469002E1A1B /* AcornUtil.applescript */,
+			);
+			name = "Applescript Interfaces";
+			sourceTree = "<group>";
+		};
 		9BFD7D39198FC9CA0062DE9D = {
 			isa = PBXGroup;
 			children = (
@@ -156,8 +166,8 @@
 				9BFD7D5A198FC9CA0062DE9D /* MainMenu.xib */,
 				9BFD7D60198FC9CA0062DE9D /* Images.xcassets */,
 				9BFD7D5D198FC9CA0062DE9D /* GNMImages.xcdatamodeld */,
+				9BC30BB419925041002E1A1B /* Applescript Interfaces */,
 				9BFD7D4C198FC9CA0062DE9D /* Supporting Files */,
-				9BC30BB119924469002E1A1B /* AcornUtil.applescript */,
 			);
 			path = GNMImages;
 			sourceTree = "<group>";

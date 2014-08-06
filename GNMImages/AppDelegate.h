@@ -16,6 +16,11 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+- (void)clearCachedObjects:(NSString *)entityDescription;
+
+
 - (IBAction)saveAction:(id)sender;
+
+- (IBAction)refresh:(id)sender;
 
 @end

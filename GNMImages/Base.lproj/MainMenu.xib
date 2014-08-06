@@ -669,14 +669,14 @@
         <window title="GNMImages" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g" userLabel="Window - mainwindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
+            <rect key="contentRect" x="335" y="390" width="495" height="450"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="495" height="450"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <browser verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" enabled="YES" hasHorizontalScroller="YES" allowsEmptySelection="YES" defaultColumnWidth="100" minColumnWidth="100" maxVisibleColumns="3" titled="YES" separatesColumns="YES" allowsTypeSelect="YES" columnResizingType="auto" translatesAutoresizingMaskIntoConstraints="NO" id="yVy-LW-TRa">
-                        <rect key="frame" x="10" y="20" width="465" height="321"/>
+                        <rect key="frame" x="10" y="110" width="465" height="321"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <connections>
                             <binding destination="EZn-PF-jni" name="content" keyPath="arrangedObjects" id="vbB-zA-pLh"/>
@@ -684,44 +684,8 @@
                             <binding destination="EZn-PF-jni" name="selectionIndexPaths" keyPath="selectionIndexPaths" previousBinding="uUV-sd-eXT" id="Dqh-0P-YpR"/>
                         </connections>
                     </browser>
-                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qiN-ax-ga3">
-                        <rect key="frame" x="10" y="321" width="21" height="19"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="square" title="+" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7P8-QP-WIJ">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="add:" target="EZn-PF-jni" id="mMP-3r-nvg"/>
-                            <binding destination="EZn-PF-jni" name="enabled" keyPath="canAdd" id="k9e-SA-TXn"/>
-                        </connections>
-                    </button>
-                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uqe-UL-ejy">
-                        <rect key="frame" x="41" y="321" width="69" height="19"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="square" title="add child" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="t8R-rX-nnD">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="addChild:" target="EZn-PF-jni" id="h6b-Lg-2Fe"/>
-                            <binding destination="EZn-PF-jni" name="enabled" keyPath="canAddChild" id="19r-LW-kvd"/>
-                        </connections>
-                    </button>
-                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kF7-as-tFa">
-                        <rect key="frame" x="120" y="321" width="18" height="19"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="square" title="-" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JH8-1F-Bf1">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="remove:" target="EZn-PF-jni" id="fBE-jI-L7R"/>
-                            <binding destination="EZn-PF-jni" name="enabled" keyPath="canRemove" id="OHO-RI-OAt"/>
-                        </connections>
-                    </button>
                     <searchField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ijd-yI-OCW">
-                        <rect key="frame" x="307" y="322" width="153" height="22"/>
+                        <rect key="frame" x="307" y="412" width="153" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Search" usesSingleLineMode="YES" bezelStyle="round" id="7Lb-JC-tgI">
                             <font key="font" metaFont="system"/>
@@ -730,7 +694,7 @@
                         </searchFieldCell>
                     </searchField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RkA-uS-ox7">
-                        <rect key="frame" x="201" y="316" width="82" height="32"/>
+                        <rect key="frame" x="201" y="406" width="82" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Taunt!" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Kzt-45-x2o">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -738,6 +702,17 @@
                         </buttonCell>
                         <connections>
                             <action selector="test:" target="kLn-eg-aHh" id="W0u-Gq-1tt"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jrh-53-utS">
+                        <rect key="frame" x="10" y="413" width="123" height="19"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="roundRect" title="Refresh" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="TWW-gt-E26">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="controlContent"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="refresh:" target="Voe-Tx-rLC" id="Ciw-iA-xeO"/>
                         </connections>
                     </button>
                 </subviews>
