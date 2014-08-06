@@ -11,6 +11,36 @@
 
 @implementation VidispineItemGrabber
 
+- (id)init:(NSString *)hst port:(NSString *)pt username:(NSString *)usr password:(NSString *)pwd
+{
+    _FieldMappings = [[NSMutableDictionary alloc] init];
+    
+    [_FieldMappings setValue:@"name" forKey:@"gnm_master_website_headline"];
+    [_FieldMappings setValue:@"uploadstatus" forKey:@"gnm_master_website_uploadstatus"];
+    [_FieldMappings setValue:@"platforms" forKey:@"gnm_master_generic_intendeduploadplatforms"];
+    [_FieldMappings setValue:@"titleid" forKey:@"gnm_master_generic_titleid"];
+    [_FieldMappings setValue:@"owner" forKey:@"user"];
+    [_FieldMappings setValue:@"mediatype" forKey:@"mediaType"];
+    [_FieldMappings setValue:@"created" forKey:@"portal_ingested"];
+    
+    return [super init:hst port:pt username:usr password:pwd];
+}
+
+- (id) init
+{
+    _FieldMappings = [[NSMutableDictionary alloc] init];
+    
+    [_FieldMappings setValue:@"name" forKey:@"gnm_master_website_headline"];
+    [_FieldMappings setValue:@"uploadstatus" forKey:@"gnm_master_website_uploadstatus"];
+    [_FieldMappings setValue:@"platforms" forKey:@"gnm_master_generic_intendeduploadplatforms"];
+    [_FieldMappings setValue:@"titleid" forKey:@"gnm_master_generic_titleid"];
+    [_FieldMappings setValue:@"owner" forKey:@"user"];
+    [_FieldMappings setValue:@"mediatype" forKey:@"mediaType"];
+    [_FieldMappings setValue:@"created" forKey:@"portal_ingested"];
+   
+    return self;
+}
+
 - (NSManagedObject *) findProjectByID:(NSString *)vsid managedObjectContext:(NSManagedObjectContext *)moc
 {
     NSError *error=nil;
@@ -48,6 +78,8 @@
     }
     if(vsid){
         [objectRef setValue:vsid forKey:@"vsid"];
+        NSString *url = [NSString stringWithFormat:@"http://%@/master/%@",[self cantemoServer],vsid];
+        [objectRef setValue:url forKey:@"url"];
     } else {
         el = [temp objectAtIndex: 0];
         [objectRef setValue:[el stringValue] forKey:@"vsid"];
@@ -56,15 +88,9 @@
     VSItem *item=[[VSItem alloc] initWithID:vsid connection:self];
     
     [item dump];
-    temp = [element elementsForName:@"loc"];
-    if([temp count]<1){ //we didn't find a specific location
-        
-    } else {
-        el = [temp objectAtIndex: 0];
-        [objectRef setValue:[el stringValue] forKey:@"url"];
-    }
+
     
-    [objectRef setValue:[[item valueForKey:@"gnm_master_website_headline"] stringValue:nil] forKey:@"name"];
+    //[objectRef setValue:[[item valueForKey:@"gnm_master_website_headline"] stringValue:nil] forKey:@"name"];
     
     VSValueList *parentCollectionValueList=[item valueForKey:@"__collection"];
     if(!parentCollectionValueList || [parentCollectionValueList count]==0){
@@ -76,6 +102,7 @@
             [objectRef setValue:parentProject forKey:@"parent" ];
         }
     }
+    [item mapToCoreDataEntity:objectRef fieldMapping:_FieldMappings];
     
     NSLog(@"added object: name=%@, loc=%@, id=%@",[objectRef valueForKey:@"name"],[objectRef valueForKey:@"url"],[objectRef valueForKey:@"vsid"]);
 }

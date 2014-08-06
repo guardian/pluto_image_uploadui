@@ -28,4 +28,6 @@
 
 - (void)dump;
 
+- (void)mapToCoreDataEntity:(NSManagedObject *)entity fieldMapping:(NSDictionary *)mapping;
+
 @end

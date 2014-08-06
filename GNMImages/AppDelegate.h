@@ -13,6 +13,8 @@
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet AcornUtil *acornUtil;
+@property (assign) IBOutlet NSTreeController *treeController;
+@property (assign) IBOutlet NSArrayController *selectedMasterArrayController;
 
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
@@ -23,6 +25,7 @@
 - (IBAction)saveAction:(id)sender;
 - (IBAction)refresh:(id)sender;
 - (IBAction)showPrefs:(id)sender;
+- (IBAction)openMasterPage:(id)sender;
 
 - (NSString *)currentAcornFilename;
 

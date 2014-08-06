@@ -109,4 +109,19 @@
     }
     NSLog(@"-----------------------------------");
 }
+
+- (void)mapToCoreDataEntity:(NSManagedObject *)entity fieldMapping:(NSDictionary *)mapping
+{
+    NSEnumerator *e = [mapping keyEnumerator];
+    NSString *sourceField;
+    
+    while((sourceField = [e nextObject])) {
+        VSValueList *vl = [_metadata valueForKey:sourceField];
+        if(!vl) continue;
+        
+        NSString *destField = [mapping valueForKey:sourceField];
+        [entity setValue:[vl stringValue:@","] forKey:destField];
+        
+    }
+}
 @end

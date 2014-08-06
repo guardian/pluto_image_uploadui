@@ -23,13 +23,38 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize managedObjectContext = _managedObjectContext;
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    NSLog(@"observeValueForKeyPath");
+    id newObject = [change valueForKey:NSKeyValueChangeNewKey];
+    NSLog(@"New object is %@",newObject);
+    NSLog(@"New value is 0x%x",(__bridge void *)newObject);
+    
+    NSArray *objs = [_treeController selectedObjects];
+    
+    NSLog(@"selectedObjects returned %lu values",(unsigned long)[objs count]);
+    
+    for(id object in objs){
+        NSLog(@"\t%@",object);
+    }
+    
+    if([objs count]>0){
+        BOOL r=[_selectedMasterArrayController setSelectedObjects:[NSArray arrayWithObject:[objs objectAtIndex:0]]];
+        if(!r) NSLog(@"error changing selection on array controller");
+    } else {
+        [_selectedMasterArrayController setSelectedObjects:[NSArray array]];
+    }
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     NSError *error;
     NSURL *applicationDocumentsDirectory = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     NSURL *storeURL = [applicationDocumentsDirectory URLByAppendingPathComponent:@"GNMImages.storedata"];
     [[NSFileManager defaultManager] removeItemAtPath:storeURL.path error:&error];
-        
+
+    [_treeController addObserver:self forKeyPath:@"selectedObjects" options:NSKeyValueObservingOptionNew context:NULL];
+
     // Insert code here to initialize your application
 
  /*   Class AcornUtilClass = NSClassFromString(@"AcornUtil");
@@ -301,4 +326,31 @@
     
 }
 
+- (void) setSelectedIndexPaths:(NSIndexPath *)p
+{
+    
+}
+
+- (NSIndexSet *) selectedMasterIndex
+{
+    return [NSIndexSet indexSetWithIndex:0];
+    //return [NSArray arrayWithObject:[NSNumber numberWithInt:0]];
+}
+
+- (void) setSelectedMasterIndex
+{
+    
+}
+
+- (IBAction)openMasterPage:(id)sender
+{
+    NSManagedObject *selectedMaster;
+    
+    NSArray *selection = [_selectedMasterArrayController selectedObjects];
+    if([selection count]<1) return;
+    selectedMaster = [selection objectAtIndex:0];
+    
+    NSTask *openTask = [NSTask launchedTaskWithLaunchPath:@"/usr/bin/open" arguments:[NSArray arrayWithObjects:[selectedMaster valueForKey:@"url"], nil]];
+    [openTask launch];
+}
 @end

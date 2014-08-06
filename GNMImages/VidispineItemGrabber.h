@@ -9,6 +9,9 @@
 #import "VidispineBase.h"
 
 @interface VidispineItemGrabber : VidispineBase
+@property NSMutableDictionary *FieldMappings;
+
+- (id) init;
 
 - (void)fixupMasters:(NSManagedObjectContext *)moc;
 - (int)getMasters:managedObjectContext;

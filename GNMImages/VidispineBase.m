@@ -147,6 +147,7 @@ size_t upload_read_callback(char *ptr, size_t size, size_t nmemb, void *userdata
 @synthesize username;
 @synthesize passwd;
 @synthesize debug;
+@synthesize cantemoServer;
 
 - (id)init:(NSString *)hst port:(NSString *)pt username:(NSString *)usr password:(NSString *)pwd
 {
@@ -155,6 +156,7 @@ size_t upload_read_callback(char *ptr, size_t size, size_t nmemb, void *userdata
     username=usr;
     passwd=pwd;
     
+    cantemoServer = @"cantemoportal.dc1.gnm.int";
     return self;
 }
 

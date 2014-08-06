@@ -9,8 +9,13 @@
         <relationship name="children" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PLUTOProject" inverseName="parent" inverseEntity="PLUTOProject" syncable="YES"/>
     </entity>
     <entity name="PLUTOMaster" syncable="YES">
-        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="created" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mediatype" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" defaultValueString="new master" syncable="YES"/>
+        <attribute name="owner" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="platforms" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titleid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uploadstatus" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="vsid" optional="YES" attributeType="String" regularExpressionString="^\w{2}-\d+$" syncable="YES"/>
         <relationship name="children" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PLUTOMaster" syncable="YES"/>
@@ -26,7 +31,7 @@
     </entity>
     <elements>
         <element name="PLUTOCommission" positionX="-63" positionY="-18" width="128" height="135"/>
-        <element name="PLUTOMaster" positionX="-36" positionY="9" width="128" height="133"/>
+        <element name="PLUTOMaster" positionX="-36" positionY="9" width="128" height="210"/>
         <element name="PLUTOProject" positionX="-54" positionY="0" width="128" height="135"/>
     </elements>
 </model>

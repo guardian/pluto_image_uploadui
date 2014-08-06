@@ -38,6 +38,8 @@
 @property NSString *port;
 @property NSString *username;
 @property NSString *passwd;
+@property NSString *cantemoServer;
+
 @property NSError *lastError;
 
 - (id)init:(NSString *)hostname port:(NSString *)port username:(NSString *)username password:(NSString *)passwd;
