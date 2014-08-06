@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 //#import "VidispineBase.h"
 #import "VidispineCommissionGrabber.h"
+#import "VidispineItemGrabber.h"
 
 @implementation AppDelegate
 
@@ -41,10 +42,13 @@
     [grabber getCommissions:ctx];
     NSLog(@"getting projects...");
     [grabber getProjects:ctx];
-    [grabber getMasters:ctx];
+    
+    VidispineItemGrabber *ig=[[VidispineItemGrabber alloc] init:@"dc1-mmlb-02.dc1.gnm.int" port:@"8080" username:@"admin" password:@"admin"];
+    [ig getMasters:ctx];
+//    [grabber getMasters:ctx];
     
  NSLog(@"fixing up relations...");
-    [grabber fixupMasters:ctx];
+//    [grabber fixupMasters:ctx];
     [grabber fixupProjects:ctx];
     
 }

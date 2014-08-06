@@ -8,6 +8,46 @@
 
 #import "VidispineBase.h"
 
+@implementation VSValueList
+
+- (id)init
+{
+    _list = [[NSMutableArray alloc] init];
+    return self;
+}
+
+-(NSString *)stringValue:(NSString *)delim
+{
+    NSString *rtn=@"";
+    if(delim==nil)
+        delim = @"";
+    
+    for(NSString *v in _list){
+        rtn=[NSString stringWithFormat:@"%@%@%@",rtn,delim,v];
+    }
+    
+    if([delim compare:@""] ==0)
+        return rtn;
+    
+    return [rtn substringFromIndex:1];
+}
+
+- (NSUInteger)count
+{
+    return [_list count];
+}
+
+- (void)addObject:(id)object
+{
+    [_list addObject:object];
+}
+
+- (NSArray *)array
+{
+    return [NSArray arrayWithArray:_list];
+}
+@end
+
 @implementation VSRequest
 @synthesize path;
 @synthesize queryPart;

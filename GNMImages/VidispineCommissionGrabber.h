@@ -14,10 +14,8 @@
 
 - (int)getCommissions:managedObjectContext;
 - (int)getProjects:managedObjectContext;
-- (int)getMasters:managedObjectContext;
 
 - (void)fixupProjects:managedObjectContext;
-- (void)fixupMasters:(NSManagedObjectContext *)moc;
 
 - (void)processVidispineXML:(NSXMLDocument *)xmlDoc type:(NSString *)type entityName:(NSString *)entityName managedObjectContext:(NSManagedObjectContext *)moc;
 

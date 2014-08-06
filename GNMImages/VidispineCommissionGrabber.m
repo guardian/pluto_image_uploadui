@@ -124,21 +124,11 @@
     return [self getGeneric:@"collection" entityName:@"PLUTOProject" bodyString:bodystring managedObjectContext:managedObjectContext];
 }
 
-- (int)getMasters:managedObjectContext
-{
-    NSString *bodystring=@"<ItemSearchDocument xmlns=\"http://xml.vidispine.com/schema/vidispine\"> \
-    <field> \
-    <name>gnm_type</name> \
-    <value>Master</value> \
-    </field> \
-    </ItemSearchDocument>";
-    
-    return [self getGeneric:@"item" entityName:@"PLUTOMaster" bodyString:bodystring managedObjectContext:managedObjectContext];
-}
+
 
 -(int)getGeneric:(NSString *)type entityName:(NSString *)entityName bodyString:(NSString *)bodyString managedObjectContext:(NSManagedObjectContext *)managedObjectContext
 {
-    [self setDebug:true];
+    //[self setDebug:true];
     
 //VSRequest *rq=[[VSRequest alloc] init:@"/collection" method:@"PUT" body:bodystring];
     VSRequest *rq=[[VSRequest alloc] init];

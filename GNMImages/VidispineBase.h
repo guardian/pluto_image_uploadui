@@ -9,6 +9,16 @@
 #import <Foundation/Foundation.h>
 #include <curl/curl.h>
 
+@interface VSValueList : NSObject
+@property NSMutableArray *list;
+
+- (NSString *)stringValue:(NSString *)delim;
+- (NSUInteger)count;
+
+- (NSArray *)array;
+- (void)addObject:(id)object;
+@end
+
 @interface VSRequest : NSObject
 @property NSString *path;
 @property NSMutableArray *queryPart;
