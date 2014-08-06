@@ -13,6 +13,12 @@
 @interface AcornUtil : NSObject
 - (void) test:(id)sender;
 
+- (NSString *)filename:(id)sender;
+- (NSString *)currentFileURL:(id)sender;
+
+- (NSNumber *)currentFileWidth:(id)sender;
+- (NSNumber *)currentFileHeight:(id)sender;
+
 @end
 
 

@@ -7,10 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "AcornUtil.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet AcornUtil *acornUtil;
 
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
@@ -18,9 +20,15 @@
 
 - (void)clearCachedObjects:(NSString *)entityDescription;
 
-
 - (IBAction)saveAction:(id)sender;
-
 - (IBAction)refresh:(id)sender;
+- (IBAction)showPrefs:(id)sender;
+
+- (NSString *)currentAcornFilename;
+
+- (NSString *)vspassword;
+- (void)setVspassword:(NSString *)newPasswd;
+
+- (NSString *)currentAcornFileURL;
 
 @end

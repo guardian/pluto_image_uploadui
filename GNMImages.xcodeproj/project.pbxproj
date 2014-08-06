@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B4913DA19926EB800A090B6 /* Fraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4913D919926EB800A090B6 /* Fraction.m */; };
 		9BC30BAD199206D6002E1A1B /* VSItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC30BAC199206D6002E1A1B /* VSItem.m */; };
 		9BC30BB01992340B002E1A1B /* VidispineItemGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC30BAF1992340B002E1A1B /* VidispineItemGrabber.m */; };
 		9BC30BB219924469002E1A1B /* AcornUtil.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 9BC30BB119924469002E1A1B /* AcornUtil.applescript */; };
+		9BC30BB6199254EF002E1A1B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC30BB5199254EF002E1A1B /* Security.framework */; };
+		9BC30BB919925528002E1A1B /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC30BB819925528002E1A1B /* SSKeychain.m */; };
+		9BC30BBD19925935002E1A1B /* PrefsPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC30BBC19925935002E1A1B /* PrefsPanelController.m */; };
 		9BFD7D46198FC9CA0062DE9D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFD7D45198FC9CA0062DE9D /* Cocoa.framework */; };
 		9BFD7D50198FC9CA0062DE9D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BFD7D4E198FC9CA0062DE9D /* InfoPlist.strings */; };
 		9BFD7D52198FC9CA0062DE9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFD7D51198FC9CA0062DE9D /* main.m */; };
@@ -40,12 +44,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B4913D819926EB800A090B6 /* Fraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fraction.h; sourceTree = "<group>"; };
+		9B4913D919926EB800A090B6 /* Fraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fraction.m; sourceTree = "<group>"; };
 		9BC30BAB199206D6002E1A1B /* VSItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSItem.h; sourceTree = "<group>"; };
 		9BC30BAC199206D6002E1A1B /* VSItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSItem.m; sourceTree = "<group>"; };
 		9BC30BAE1992340B002E1A1B /* VidispineItemGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VidispineItemGrabber.h; sourceTree = "<group>"; };
 		9BC30BAF1992340B002E1A1B /* VidispineItemGrabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VidispineItemGrabber.m; sourceTree = "<group>"; };
 		9BC30BB119924469002E1A1B /* AcornUtil.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = AcornUtil.applescript; sourceTree = "<group>"; };
 		9BC30BB31992502A002E1A1B /* AcornUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AcornUtil.h; sourceTree = "<group>"; };
+		9BC30BB5199254EF002E1A1B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
+		9BC30BB719925528002E1A1B /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSKeychain.h; path = sskeychain/SSKeychain.h; sourceTree = "<group>"; };
+		9BC30BB819925528002E1A1B /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSKeychain.m; path = sskeychain/SSKeychain.m; sourceTree = "<group>"; };
+		9BC30BBB19925935002E1A1B /* PrefsPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefsPanelController.h; sourceTree = "<group>"; };
+		9BC30BBC19925935002E1A1B /* PrefsPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefsPanelController.m; sourceTree = "<group>"; };
 		9BFD7D42198FC9CA0062DE9D /* GNMImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GNMImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BFD7D45198FC9CA0062DE9D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9BFD7D48198FC9CA0062DE9D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -66,8 +77,8 @@
 		9BFD7D6E198FC9CA0062DE9D /* GNMImagesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GNMImagesTests-Info.plist"; sourceTree = "<group>"; };
 		9BFD7D70198FC9CA0062DE9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9BFD7D72198FC9CA0062DE9D /* GNMImagesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GNMImagesTests.m; sourceTree = "<group>"; };
-		9BFD7D7C198FC9F90062DE9D /* RubyCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RubyCocoa.framework; path = ../../../../../Library/Frameworks/RubyCocoa.framework; sourceTree = "<group>"; };
-		9BFD7D7E198FCA1E0062DE9D /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = ../../../../../System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = "<group>"; };
+		9BFD7D7C198FC9F90062DE9D /* RubyCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RubyCocoa.framework; path = /Library/Frameworks/RubyCocoa.framework; sourceTree = "<absolute>"; };
+		9BFD7D7E198FCA1E0062DE9D /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = /System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = "<absolute>"; };
 		9BFD7D80198FFF130062DE9D /* VidispineBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VidispineBase.h; sourceTree = "<group>"; };
 		9BFD7D81198FFF130062DE9D /* VidispineBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VidispineBase.m; sourceTree = "<group>"; };
 		9BFD7D83198FFF2B0062DE9D /* VidispineCommissionGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VidispineCommissionGrabber.h; sourceTree = "<group>"; };
@@ -81,6 +92,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BFD7D8719900A600062DE9D /* libcurl.dylib in Frameworks */,
+				9BC30BB6199254EF002E1A1B /* Security.framework in Frameworks */,
 				9BFD7D7D198FC9F90062DE9D /* RubyCocoa.framework in Frameworks */,
 				9BFD7D7F198FCA1E0062DE9D /* AppleScriptObjC.framework in Frameworks */,
 				9BFD7D46198FC9CA0062DE9D /* Cocoa.framework in Frameworks */,
@@ -108,11 +120,18 @@
 			name = "Applescript Interfaces";
 			sourceTree = "<group>";
 		};
+		9BC30BBA19925535002E1A1B /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				9BC30BB719925528002E1A1B /* SSKeychain.h */,
+				9BC30BB819925528002E1A1B /* SSKeychain.m */,
+			);
+			name = Keychain;
+			sourceTree = "<group>";
+		};
 		9BFD7D39198FC9CA0062DE9D = {
 			isa = PBXGroup;
 			children = (
-				9BFD7D7E198FCA1E0062DE9D /* AppleScriptObjC.framework */,
-				9BFD7D7C198FC9F90062DE9D /* RubyCocoa.framework */,
 				9BFD7D4B198FC9CA0062DE9D /* GNMImages */,
 				9BFD7D6C198FC9CA0062DE9D /* GNMImagesTests */,
 				9BFD7D44198FC9CA0062DE9D /* Frameworks */,
@@ -132,6 +151,9 @@
 		9BFD7D44198FC9CA0062DE9D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9BC30BB5199254EF002E1A1B /* Security.framework */,
+				9BFD7D7E198FCA1E0062DE9D /* AppleScriptObjC.framework */,
+				9BFD7D7C198FC9F90062DE9D /* RubyCocoa.framework */,
 				9BFD7D8619900A600062DE9D /* libcurl.dylib */,
 				9BFD7D45198FC9CA0062DE9D /* Cocoa.framework */,
 				9BFD7D67198FC9CA0062DE9D /* XCTest.framework */,
@@ -153,8 +175,13 @@
 		9BFD7D4B198FC9CA0062DE9D /* GNMImages */ = {
 			isa = PBXGroup;
 			children = (
+				9BC30BBA19925535002E1A1B /* Keychain */,
 				9BFD7D57198FC9CA0062DE9D /* AppDelegate.h */,
 				9BFD7D58198FC9CA0062DE9D /* AppDelegate.m */,
+				9B4913D819926EB800A090B6 /* Fraction.h */,
+				9B4913D919926EB800A090B6 /* Fraction.m */,
+				9BC30BBB19925935002E1A1B /* PrefsPanelController.h */,
+				9BC30BBC19925935002E1A1B /* PrefsPanelController.m */,
 				9BFD7D80198FFF130062DE9D /* VidispineBase.h */,
 				9BFD7D81198FFF130062DE9D /* VidispineBase.m */,
 				9BC30BAE1992340B002E1A1B /* VidispineItemGrabber.h */,
@@ -301,10 +328,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BFD7D82198FFF130062DE9D /* VidispineBase.m in Sources */,
+				9B4913DA19926EB800A090B6 /* Fraction.m in Sources */,
+				9BC30BBD19925935002E1A1B /* PrefsPanelController.m in Sources */,
 				9BFD7D59198FC9CA0062DE9D /* AppDelegate.m in Sources */,
 				9BFD7D5F198FC9CA0062DE9D /* GNMImages.xcdatamodeld in Sources */,
 				9BC30BB219924469002E1A1B /* AcornUtil.applescript in Sources */,
 				9BC30BB01992340B002E1A1B /* VidispineItemGrabber.m in Sources */,
+				9BC30BB919925528002E1A1B /* SSKeychain.m in Sources */,
 				9BC30BAD199206D6002E1A1B /* VSItem.m in Sources */,
 				9BFD7D85198FFF2B0062DE9D /* VidispineCommissionGrabber.m in Sources */,
 				9BFD7D52198FC9CA0062DE9D /* main.m in Sources */,

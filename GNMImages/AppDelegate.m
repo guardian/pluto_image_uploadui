@@ -15,6 +15,7 @@
 #import <AppleScriptObjC/AppleScriptObjC.h>
 
 #import "AcornUtil.h"
+#import "Fraction.h"
 
 @implementation AppDelegate
 
@@ -31,13 +32,13 @@
         
     // Insert code here to initialize your application
 
-    Class AcornUtilClass = NSClassFromString(@"AcornUtil");
+ /*   Class AcornUtilClass = NSClassFromString(@"AcornUtil");
     
     AcornUtil *au = [[AcornUtilClass alloc] init];
     
     [au test:self];
  
-    return;
+    return; */
 }
 
 - (void)clearCachedObjects:(NSString *)entityDescription
@@ -62,6 +63,25 @@
 - (void)refresh:(id)sender
 {
     NSManagedObjectContext *ctx=[self managedObjectContext];
+    
+    NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
+    
+/*    NSError *paramError=nil;
+    if([defs valueForKey:@"hostname"]==nil){
+        [self bomb:@"Please set a server in Preferences"];
+        return;
+    }
+    
+    if([defs valueForKey:@"port"]==nil){
+        [self bomb:@"Please set a port in Preferences"];
+        return;
+    }
+    
+    if([defs valueForKey:@"user"]==nil){
+        [self bomb:@"Please set a server in Preferences"];
+        return;
+    }
+ */
     
     [self clearCachedObjects:@"PLUTOMaster"];
     [self clearCachedObjects:@"PLUTOProject"];
@@ -243,6 +263,42 @@
         }
     }
     return NSTerminateNow;
+}
+
+- (NSString *)vspassword
+{
+    return @"admin";
+}
+
+- (NSString *)currentAcornFilename
+{
+    return [_acornUtil filename:self];
+}
+
+- (NSString *)currentAcornFileURL
+{
+    return [_acornUtil currentFileURL:self];
+}
+
+- (NSString *)currentAcornDimensionString
+{
+    NSNumber *w=[_acornUtil currentFileWidth:self];
+    NSNumber *h=[_acornUtil currentFileHeight:self];
+    
+    if(w==nil || h==nil)
+        return @"(no image found)";
+    
+    Fraction *aspect=[[Fraction alloc] init];
+    [aspect reduce:[w doubleValue]/[h doubleValue]];
+    //[aspect reduce:1.55];
+    
+    NSString *rtn = [NSString stringWithFormat:@"%@x%@, aspect ratio %@",w,h,[aspect stringValue:@"x"]];
+    return rtn;
+}
+
+- (void)setVspassword:(NSString *)newPasswd
+{
+    
 }
 
 @end
