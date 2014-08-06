@@ -6,10 +6,18 @@
 //  Copyright (c) 2014 Guardian News & Media. All rights reserved.
 //
 
+#include <objc/runtime.h>
+
 #import "AppDelegate.h"
 //#import "VidispineBase.h"
 #import "VidispineCommissionGrabber.h"
 #import "VidispineItemGrabber.h"
+#import <AppleScriptObjC/AppleScriptObjC.h>
+
+@interface AcornUtil : NSObject
+- (void) test:(id)sender;
+
+@end
 
 @implementation AppDelegate
 
@@ -23,9 +31,32 @@
     NSURL *applicationDocumentsDirectory = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     NSURL *storeURL = [applicationDocumentsDirectory URLByAppendingPathComponent:@"GNMImages.storedata"];
     [[NSFileManager defaultManager] removeItemAtPath:storeURL.path error:&error];
-    
+        
     // Insert code here to initialize your application
     NSManagedObjectContext *ctx=[self managedObjectContext];
+    
+    /*Class AcornUtilClass = [[NSBundle mainBundle] classNamed:@"AcornUtil"];
+    id AcornUtil = class_createInstance(AcornUtilClass,0);*/
+    Class AcornUtilClass = NSClassFromString(@"AcornUtil");
+    
+    AcornUtil *au = [[AcornUtilClass alloc] init];
+    
+    //id AcornUtil = [[NSClassFromString(@"AcornUtil") alloc] init];
+    
+    //id acorn = [[AcornUtil alloc] init];
+ 
+    
+/*    int i=0;
+    unsigned int mc = 0;
+    Method * mlist = class_copyMethodList(AcornUtil, &mc);
+    NSLog(@"%d methods", mc);
+    for(i=0;i<mc;i++)
+        NSLog(@"Method no #%d: %s", i, sel_getName(method_getName(mlist[i])));
+ */
+    
+    [au test:self];
+ 
+    
 /*
  NSManagedObject *testCommissionOne = [NSEntityDescription insertNewObjectForEntityForName:@"PLUTOCommission"inManagedObjectContext:ctx];
     
@@ -36,6 +67,8 @@
     [testCommissionOne setValue:[NSSet setWithObject:testProjectOne] forKey:@"children"];
  */
 
+    return;
+    
     VidispineCommissionGrabber *grabber=[[VidispineCommissionGrabber alloc] init:@"dc1-mmlb-02.dc1.gnm.int" port:@"8080" username:@"admin" password:@"admin"];
     
     NSLog(@"getting commissions...");

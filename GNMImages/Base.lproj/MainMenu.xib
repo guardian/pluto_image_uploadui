@@ -729,6 +729,17 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </searchFieldCell>
                     </searchField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RkA-uS-ox7">
+                        <rect key="frame" x="201" y="316" width="82" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Taunt!" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Kzt-45-x2o">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="test:" target="kLn-eg-aHh" id="W0u-Gq-1tt"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
         </window>
@@ -738,5 +749,6 @@
                 <binding destination="Voe-Tx-rLC" name="managedObjectContext" keyPath="managedObjectContext" id="Scg-eq-xbW"/>
             </connections>
         </treeController>
+        <customObject id="kLn-eg-aHh" customClass="AcornUtil"/>
     </objects>
 </document>

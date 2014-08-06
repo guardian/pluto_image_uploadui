@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9BC30BAD199206D6002E1A1B /* VSItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC30BAC199206D6002E1A1B /* VSItem.m */; };
 		9BC30BB01992340B002E1A1B /* VidispineItemGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC30BAF1992340B002E1A1B /* VidispineItemGrabber.m */; };
+		9BC30BB219924469002E1A1B /* AcornUtil.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 9BC30BB119924469002E1A1B /* AcornUtil.applescript */; };
 		9BFD7D46198FC9CA0062DE9D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFD7D45198FC9CA0062DE9D /* Cocoa.framework */; };
 		9BFD7D50198FC9CA0062DE9D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BFD7D4E198FC9CA0062DE9D /* InfoPlist.strings */; };
 		9BFD7D52198FC9CA0062DE9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFD7D51198FC9CA0062DE9D /* main.m */; };
@@ -43,6 +44,7 @@
 		9BC30BAC199206D6002E1A1B /* VSItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSItem.m; sourceTree = "<group>"; };
 		9BC30BAE1992340B002E1A1B /* VidispineItemGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VidispineItemGrabber.h; sourceTree = "<group>"; };
 		9BC30BAF1992340B002E1A1B /* VidispineItemGrabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VidispineItemGrabber.m; sourceTree = "<group>"; };
+		9BC30BB119924469002E1A1B /* AcornUtil.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = AcornUtil.applescript; sourceTree = "<group>"; };
 		9BFD7D42198FC9CA0062DE9D /* GNMImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GNMImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BFD7D45198FC9CA0062DE9D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9BFD7D48198FC9CA0062DE9D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -155,6 +157,7 @@
 				9BFD7D60198FC9CA0062DE9D /* Images.xcassets */,
 				9BFD7D5D198FC9CA0062DE9D /* GNMImages.xcdatamodeld */,
 				9BFD7D4C198FC9CA0062DE9D /* Supporting Files */,
+				9BC30BB119924469002E1A1B /* AcornUtil.applescript */,
 			);
 			path = GNMImages;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				9BFD7D82198FFF130062DE9D /* VidispineBase.m in Sources */,
 				9BFD7D59198FC9CA0062DE9D /* AppDelegate.m in Sources */,
 				9BFD7D5F198FC9CA0062DE9D /* GNMImages.xcdatamodeld in Sources */,
+				9BC30BB219924469002E1A1B /* AcornUtil.applescript in Sources */,
 				9BC30BB01992340B002E1A1B /* VidispineItemGrabber.m in Sources */,
 				9BC30BAD199206D6002E1A1B /* VSItem.m in Sources */,
 				9BFD7D85198FFF2B0062DE9D /* VidispineCommissionGrabber.m in Sources */,
