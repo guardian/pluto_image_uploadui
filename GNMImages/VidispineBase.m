@@ -12,6 +12,8 @@
 @synthesize path;
 @synthesize queryPart;
 @synthesize matrixPart;
+@synthesize rawURL;
+@synthesize method;
 
 - (id)init:path queryPart:(NSArray *)q matrixPart:(NSArray *)m
 {
@@ -33,18 +35,31 @@
 
 - (NSString *)finalURLFragment
 {
-    NSString *queryString = @"";
+
+    NSString *queryString = @"?";
     for(NSString * i in queryPart){
         queryString=[NSString stringWithFormat:@"%@&%@", queryString, i];
     }
-    queryString=[queryString substringFromIndex:1];
+    if([queryString length]>1)
+        queryString = @"";
     
-    NSString *matrixString = @"";
+    if([queryString length]>0)
+        queryString=[queryString substringFromIndex:1];
+    
+    NSString *matrixString = @";";
     for(NSString * i in matrixPart){
-        queryString=[NSString stringWithFormat:@"%@&%@", matrixString, i];
+        matrixString=[NSString stringWithFormat:@"%@&%@", matrixString, i];
     }
-    queryString=[queryString substringFromIndex:1];
-    NSString *ret=[NSString stringWithFormat:@"/API/%@;%@&%@",path,queryString,matrixString];
+    if([matrixString length]==1)
+        matrixString = @"";
+    
+    if([matrixString length]>0)
+        matrixString=[matrixString substringFromIndex:1];
+    
+    if([path characterAtIndex:0] == '/')
+        path = [path substringFromIndex:1];
+    
+    NSString *ret=[NSString stringWithFormat:@"API/%@%@%@",path,matrixString,queryString];
     
     return ret;
 }
@@ -54,14 +69,38 @@
 
 size_t download_write_callback(char *ptr, size_t size, size_t nmemb, void *userdata)
 {
-NSMutableData *buf=(__bridge NSMutableData *)userdata;
+    NSMutableData *buf=(__bridge NSMutableData *)userdata;
 
-    [buf increaseLengthBy:(size*nmemb)];
+    //[buf increaseLengthBy:(size*nmemb)];
     [buf appendBytes:ptr length:(size*nmemb)];
     
-    return size;
+    //NSLog(@"download_write_callback: got %s",ptr);
+    return size*nmemb;
 }
 
+size_t upload_read_callback(char *ptr, size_t size, size_t nmemb, void *userdata)
+{
+    static long uploaded_bytes = 0;
+    NSData *buf=(__bridge NSData *)userdata;
+    
+    if(uploaded_bytes==[buf length]){
+        uploaded_bytes = 0;
+        return 0; //tell the library to stop if we've uploaded everything
+    }
+    
+    NSRange uploadRange;
+    uploadRange.location = uploaded_bytes;
+    uploadRange.length = size*nmemb;
+    
+    if([buf length]<uploadRange.location+uploadRange.length){
+        uploadRange.length=[buf length]-uploadRange.location;
+    }
+    
+    [buf getBytes:ptr range:uploadRange];
+    uploaded_bytes += uploadRange.length;
+    
+    return uploadRange.length;
+}
 @implementation VidispineBase
 @synthesize hostname;
 @synthesize port;
@@ -83,10 +122,16 @@ NSMutableData *buf=(__bridge NSMutableData *)userdata;
 - (NSXMLDocument *)makeRequest:(VSRequest *)req
 {
     if(!req){
+        NSLog(@"ERROR: VisidpineBase::makeRequest - req cannot be nil");
         return nil;
     }
 
-    NSString *finalURL=[NSString stringWithFormat:@"http://%@:%@/%@",hostname,port,[req finalURLFragment]];
+    NSString *finalURL = nil;
+    if([req rawURL]){
+        finalURL = [req rawURL];
+    } else {
+        finalURL=[NSString stringWithFormat:@"http://%@:%@/%@",hostname,port,[req finalURLFragment]];
+    }
     
     if(debug){
         NSLog(@"connecting to %@",finalURL);
@@ -104,13 +149,36 @@ NSMutableData *buf=(__bridge NSMutableData *)userdata;
     curl_easy_setopt(curl,CURLOPT_WRITEFUNCTION,&download_write_callback);
     curl_easy_setopt(curl,CURLOPT_WRITEDATA,(__bridge void *)dataBuffer);
     
+    if([[req method] caseInsensitiveCompare:@"PUT"]==0){
+        curl_easy_setopt(curl,CURLOPT_PUT,1L);
+        struct curl_slist *requestHeaders = NULL;
+        requestHeaders = curl_slist_append (requestHeaders,"Content-Type: application/xml");
+        
+        curl_easy_setopt(curl,CURLOPT_HTTPHEADER,requestHeaders);
+        curl_easy_setopt(curl,CURLOPT_UPLOAD,1L);
+        NSData *bodydata=[[req body] dataUsingEncoding:NSUTF8StringEncoding];
+        curl_easy_setopt(curl,CURLOPT_READDATA,bodydata);
+        curl_easy_setopt(curl,CURLOPT_READFUNCTION,&upload_read_callback);
+        //curl_easy_setopt(curl,CURLOPT_CUSTOMREQUEST,[[req method] cStringUsingEncoding:NSUTF8StringEncoding]);
+        //curl_easy_setopt(curl,CURLOPT_POSTFIELDS,[req body]);
+    }
     curl_easy_perform(curl);
     
-    if(debug){
-        NSLog(@"data returned from server:\n%@",[[NSString alloc] initWithData:dataBuffer encoding:NSUTF8StringEncoding]);
-    }
+    long responseCode = -1;
+    
+    CURLcode r = curl_easy_getinfo(curl,CURLINFO_RESPONSE_CODE,&responseCode);
+    
+    NSLog(@"response code from server: %lu",responseCode);
+    
     NSError *parseError=nil;
     NSXMLDocument *doc = [[NSXMLDocument alloc] initWithData:dataBuffer options:NSXMLDocumentTidyXML error:&parseError];
+
+    if(debug){
+        //NSLog(@"data returned from server:\n%@",[[NSString alloc] initWithData:dataBuffer encoding:NSUTF8StringEncoding]);
+        NSData *xmlString = [doc XMLData];
+        NSLog(@"xml data:\n%@",[[NSString alloc] initWithData:xmlString encoding:NSUTF8StringEncoding]);
+        
+    }
     
     if(doc==NULL){
         self.lastError=parseError;

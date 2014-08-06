@@ -18,6 +18,11 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    NSError *error;
+    NSURL *applicationDocumentsDirectory = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    NSURL *storeURL = [applicationDocumentsDirectory URLByAppendingPathComponent:@"GNMImages.storedata"];
+    [[NSFileManager defaultManager] removeItemAtPath:storeURL.path error:&error];
+    
     // Insert code here to initialize your application
     NSManagedObjectContext *ctx=[self managedObjectContext];
 /*
@@ -32,7 +37,16 @@
 
     VidispineCommissionGrabber *grabber=[[VidispineCommissionGrabber alloc] init:@"dc1-mmlb-02.dc1.gnm.int" port:@"8080" username:@"admin" password:@"admin"];
     
+    NSLog(@"getting commissions...");
     [grabber getCommissions:ctx];
+    NSLog(@"getting projects...");
+    [grabber getProjects:ctx];
+    [grabber getMasters:ctx];
+    
+ NSLog(@"fixing up relations...");
+    [grabber fixupMasters:ctx];
+    [grabber fixupProjects:ctx];
+    
 }
 
 
@@ -158,7 +172,7 @@
     if (!_managedObjectContext) {
         return NSTerminateNow;
     }
-    
+     
     if (![[self managedObjectContext] commitEditing]) {
         NSLog(@"%@:%@ unable to commit editing to terminate", [self class], NSStringFromSelector(_cmd));
         return NSTerminateCancel;
@@ -193,7 +207,6 @@
             return NSTerminateCancel;
         }
     }
-
     return NSTerminateNow;
 }
 

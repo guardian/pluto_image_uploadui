@@ -15,6 +15,7 @@
 @property NSMutableArray *matrixPart;
 @property NSString *method;
 @property NSString *body;
+@property NSString *rawURL;
 
 - (id)init:path queryPart:(NSArray *)q matrixPart:(NSArray *)m;
 - (NSString *)finalURLFragment;

@@ -4,12 +4,14 @@
         <attribute name="commissioner" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" defaultValueString="new commission" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="vsid" optional="YES" attributeType="String" regularExpressionString="^\w{2}-\d+$" syncable="YES"/>
         <relationship name="children" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PLUTOProject" inverseName="parent" inverseEntity="PLUTOProject" syncable="YES"/>
     </entity>
     <entity name="PLUTOMaster" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" defaultValueString="new master" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="vsid" optional="YES" attributeType="String" regularExpressionString="^\w{2}-\d+$" syncable="YES"/>
         <relationship name="children" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PLUTOMaster" syncable="YES"/>
         <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PLUTOProject" inverseName="children" inverseEntity="PLUTOProject" syncable="YES"/>
@@ -17,13 +19,14 @@
     <entity name="PLUTOProject" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" defaultValueString="new project" syncable="YES"/>
         <attribute name="project_type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="vsid" optional="YES" attributeType="String" regularExpressionString="^\w{2}-\d+$" syncable="YES"/>
         <relationship name="children" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PLUTOMaster" inverseName="parent" inverseEntity="PLUTOMaster" syncable="YES"/>
         <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PLUTOCommission" inverseName="children" inverseEntity="PLUTOCommission" syncable="YES"/>
     </entity>
     <elements>
-        <element name="PLUTOCommission" positionX="-63" positionY="-18" width="128" height="118"/>
-        <element name="PLUTOProject" positionX="-54" positionY="0" width="128" height="118"/>
-        <element name="PLUTOMaster" positionX="-36" positionY="9" width="128" height="118"/>
+        <element name="PLUTOCommission" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="PLUTOMaster" positionX="-36" positionY="9" width="128" height="133"/>
+        <element name="PLUTOProject" positionX="-54" positionY="0" width="128" height="135"/>
     </elements>
 </model>

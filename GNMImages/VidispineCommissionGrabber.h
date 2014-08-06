@@ -10,6 +10,16 @@
 
 @interface VidispineCommissionGrabber : VidispineBase
 
-- (int)getCommissions:managedObjectContext;
+-(int)getGeneric:(NSString *)type entityName:(NSString *)entityName bodyString:(NSString *)bodyString managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 
+- (int)getCommissions:managedObjectContext;
+- (int)getProjects:managedObjectContext;
+- (int)getMasters:managedObjectContext;
+
+- (void)fixupProjects:managedObjectContext;
+- (void)fixupMasters:(NSManagedObjectContext *)moc;
+
+- (void)processVidispineXML:(NSXMLDocument *)xmlDoc type:(NSString *)type entityName:(NSString *)entityName managedObjectContext:(NSManagedObjectContext *)moc;
+
+- (void)processVidispineElement:(NSXMLElement *)element type:(NSString *)type entityName:(NSString *)entityName managedObjectContext:(NSManagedObjectContext *)moc;
 @end
